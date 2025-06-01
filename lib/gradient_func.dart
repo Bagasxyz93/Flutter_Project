@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:pdamkotabaubau/style_text.dart';
 
 class GradientContainer extends StatelessWidget{
  const GradientContainer({super.key});
@@ -19,9 +18,26 @@ class GradientContainer extends StatelessWidget{
 
             ),
           ),
-          child: const Center(
-            child: textStyle('HelloWorld'),
-          )
+          child: Center(
+            child: Container(
+              padding: const EdgeInsets.all(5),
+              decoration: BoxDecoration(
+                color: const Color.fromRGBO(255, 255, 255, 0.9),
+                borderRadius: BorderRadius.circular(35),
+                boxShadow:[BoxShadow(
+                    color: Colors.black45,
+                    blurRadius: 15,
+                    offset: Offset(3,7)
+                  ), 
+                ],
+              ),
+              child: Image.asset(
+                'assets/image/pdambaubau.png',
+                width: 120,
+                height: 120,
+              ),
+            ),
+          ),
         );
   }
 }

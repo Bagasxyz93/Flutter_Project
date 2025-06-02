@@ -1,42 +1,23 @@
 import 'package:flutter/material.dart';
+import 'icon.dart';
 
 class GradientContainer extends StatelessWidget{
- const GradientContainer({super.key});
+ const GradientContainer({super.key, required this.colors});
+
+  final List<Color> colors;
 
  @override
   Widget build(BuildContext context) {
     return Container(
-          decoration: const BoxDecoration(
+          decoration: BoxDecoration(
             gradient: LinearGradient(
-              colors: [
-                  Color.fromARGB(204, 33, 149, 243),
-                  Color.fromARGB(255, 87, 149, 255),
-                  Color.fromARGB(255, 25, 109, 252)
-              ],
+              colors:colors,
               begin: Alignment.topRight,
               end: Alignment.bottomLeft
-
             ),
           ),
           child: Center(
-            child: Container(
-              padding: const EdgeInsets.all(5),
-              decoration: BoxDecoration(
-                color: const Color.fromRGBO(255, 255, 255, 0.9),
-                borderRadius: BorderRadius.circular(35),
-                boxShadow:[BoxShadow(
-                    color: Colors.black45,
-                    blurRadius: 15,
-                    offset: Offset(3,7)
-                  ), 
-                ],
-              ),
-              child: Image.asset(
-                'assets/image/pdambaubau.png',
-                width: 120,
-                height: 120,
-              ),
-            ),
+            child:const iconContainer(),
           ),
         );
   }

@@ -17,7 +17,7 @@ class _InputDialogState extends State<InputDialog>{
 
   bool _isLoading = false;
 
-  void _handlwSubmit() async{
+  void _handleSubmit() async{
     final name = _namecontroller.text.trim();
     final desc = _desccontroller.text.trim();
 
@@ -89,9 +89,9 @@ class _InputDialogState extends State<InputDialog>{
           child: Text('Cancel')
         ),
         ElevatedButton(
-        onPressed: _isLoading ? null : _handlwSubmit, 
+        onPressed: _isLoading ? null : _handleSubmit, 
         child: _isLoading 
-            ? const CircularProgressIndicator(strokeWidth: 2,)
+            ? const CircularProgressIndicator(strokeWidth: 1.5,)
             : const Text('Send'),
         )
       ],

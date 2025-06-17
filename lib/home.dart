@@ -4,7 +4,8 @@ import 'repo.dart';
 import 'models/item.dart';
 
 class MyHomePage extends StatefulWidget {
- const MyHomePage({super.key});
+ const MyHomePage({super.key, required this.initialItems});
+ final List<Item> initialItems;
 
   @override
   State<MyHomePage> createState() => _MyHomePageState();
@@ -54,7 +55,7 @@ class _MyHomePageState extends State<MyHomePage> {
   }
 
   @override
-  Widget build(BuildContext context) {
+    Widget build(BuildContext context) {
  
     return Scaffold(
       appBar: AppBar(
@@ -121,7 +122,7 @@ class _MyHomePageState extends State<MyHomePage> {
             );
           });
         }, 
-        backgroundColor: Colors.lightBlue.shade300,
+        backgroundColor: const Color.fromARGB(255, 39, 166, 225),
         child: Icon(
           Icons.add,
           color: Colors.white,

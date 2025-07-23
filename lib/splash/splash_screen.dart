@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:pdamkotabaubau/models/item.dart';
-import 'package:pdamkotabaubau/repo.dart';
+import 'package:pdamkotabaubau/data/models/item.dart';
+import 'package:pdamkotabaubau/data/models/repo.dart';
 import 'gradient_func.dart';
-import 'package:pdamkotabaubau/home.dart';
+import 'package:pdamkotabaubau/home-screen/home.dart';
 
 class SplashScreen extends StatefulWidget{
   const SplashScreen({super.key});

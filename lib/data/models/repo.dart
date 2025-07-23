@@ -1,7 +1,7 @@
 import 'dart:convert';
 import 'package:flutter/cupertino.dart';
 import 'package:http/http.dart' as http;
-import 'models/item.dart';
+import 'item.dart';
 
 class Repo {
   final _baseUrl = 'https://6849404045f4c0f5ee70a090.mockapi.io/learnJson/api';
@@ -37,6 +37,22 @@ class Repo {
         return Item.fromJson(data);
       }else{
         return null;
+      }
+    } catch (e) {
+      debugPrint('Error : $e');
+      throw Exception('Terjadi Masalah : $e');
+    }
+  }
+
+  Future<bool> deleteData(String id) async{
+    try {
+      final response = await http.delete(Uri.parse(_baseUrl + '/items/$id'));
+
+      if(response.statusCode == 200){
+        return true;
+      }else{
+        debugPrint('Gagal menghapus data : ${response.statusCode}');
+        return false;
       }
     } catch (e) {
       debugPrint('Error : $e');
